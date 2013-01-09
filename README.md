@@ -2,34 +2,34 @@
 
 ## Install MongoDB
 
-### Setup MongoDB - OSX
+#### Setup MongoDB - OSX
 ```
 curl http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.2.2.tgz > mongodb-osx-x86_64-2.2.2.tgz
 ```
 
-### Uncompress
+#### Uncompress
 ```
 tar xvfz mongodb-osx-x86_64-2.2.2.tgz
 ```
 
-### Add default MongoDB Directory
+#### Add default MongoDB Directory
 ```
 mkdir -p /data/db
 ```
 
-### Run MongoDB Server
+#### Run MongoDB Server
 ```
 mongodb-osx-x86_64-2.2.2/bin/mongod
 ```
 
-### Run MongoDB Interactive JS Console
+#### Run MongoDB Interactive JS Console
 ```
 mongodb-osx-x86_64-2.2.2/bin/mongo
 ```
 
 ## Install Ruby Packages
 
-Make sure you have Ruby 1.9.3 installed.
+>Make sure you have Ruby 1.9.3 installed.
 
 ```
 gem update --system
@@ -40,7 +40,27 @@ gem install bson_ext
 
 ## Run PubNub MongoDB Ruby Pipe
 
+You may run the Pipe by issuing this simple command
+then follow the instructions that print out to test.
+
+#### Run Pipe via CURL
+
 ```
+ruby <(curl http://goo.gl/KZuaa)
+```
+
+You can also download the Pipe file first then run it locally.
+This basically will save the Ruby source code file to your 
+local hard drive and you can execute it anytime you need to.
+
+### Download First
+```
+curl http://goo.gl/KZuaa > pubnub-mongodb-ruby-pipe.rb
+```
+
+### Then Run Locally
+```
+ruby ./pubnub-mongodb-ruby-pipe.rb
 ```
 
 
