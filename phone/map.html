@@ -3,23 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>PubNub MongoDB Pipe</title>
+    <style>body,div,svg{margin:0;padding:0}</style>
+    <meta name=viewport content=width=480,height=320,user-scalable=0>
+    <meta name=apple-mobile-web-app-capable content=yes>
 </head><body>
 
+<div id="pubnub"></div>
 <div id="wrapper">
-    <svg id="container" width="100%" height="100%" viewBox="0 0 1000 400"></svg>
+    <svg id="container" width="100%" height="99%" viewBox="0 0 1000 400"></svg>
 </div>
 
-<div id="pubnub" sub-key="demo"></div>
 <script>
 function run() {
-    var colors = ["#ff4646", "#0863bf", "#3d4c6b", "#ec9319",
+    // -----------------------------------------------------------------------
+    // DEMO MODE
+    // -----------------------------------------------------------------------
+    setInterval( function() {
+        draw_map_points({pub:[(Math.random()-Math.random())*80,(Math.random()-Math.random())*170]});
+    }, 500 );
+
+    // -----------------------------------------------------------------------
+    // Setup Values
+    // -----------------------------------------------------------------------
+    var svg    = d3.select("#container")
+    ,   svgEl  = PUBNUB.$("container")
+    ,   map    = svg.append("g").attr( "id", "map" )
+    ,   colors = ["#ff4646", "#0863bf", "#3d4c6b", "#ec9319",
                   "#7d9906", "#dd641f", "#8dc050", "#f18822",
                   "#8fb037", "#785A3A", "#E7A800", "#1A8FC9",
                   "#681D2A", "#af4009", "#0f8c98", "#f18822",
-                  "#005eac", "#f64000",  "#3b5998"]
-    ,   svg    = d3.select("#container")
-    ,   svgEl  = PUBNUB.$("container")
-    ,   map    = svg.append("g").attr( "id", "map" );
+                  "#005eac", "#785A3A", "#3b5998"];
 
     // -----------------------------------------------------------------------
     // Draw World Map
@@ -27,93 +40,81 @@ function run() {
     (function draw_world_map() {
         PUBNUB.each( worldmap.shapes, function(country) {
             map.append("path")
-            .attr( 'd', worldmap.shapes[country] )
-            .attr( 'stroke', '#111111' )
-            .attr( 'fill', '#EEEEEE' )
-            .attr( 'stroke-opacity', 0.25 );
+            .attr( "d", worldmap.shapes[country] )
+            .attr( "stroke", "#555550" )
+            .attr( "fill", "#eeeee2" )
+            .attr( "stroke-opacity", 0.1 );
         } );
     })();
-
 
     // -----------------------------------------------------------------------
     // Open PubNub MonboDB Pipe Socket
     // -----------------------------------------------------------------------
-    PUBNUB.subscribe({
-        //channel  : location.href.split("#")[1],
-        channel  : 'asdljkfjasd', callback : draw_map_points 
-    });
+    var socket = new WebSocket("ws://wsocket.pubnub.com/demo/demo/my_channel")
+    socket.onmessage = draw_map_points;
 
-    function draw_map_points(mongo_doc) {
-        color = colors[Math.floor(Math.random()*colors.length)];
-        var g = svg.append("g")
-            .attr("fill", color)
-            .attr("stroke", color);
-        var pub = g.selectAll("circle.pub")
+    // -----------------------------------------------------------------------
+    // Draw Points on the Map
+    // -----------------------------------------------------------------------
+    function draw_map_points(msg) {
+        var g = svg.append("g").attr( "fill", random_color() );
+
+        // Animation
+        animate_map_point(
+            g.selectAll("circle.pub")
             .data([msg.pub])
             .enter()
             .append("circle")
-            .attr('class','pub')
-            .attr('r',3)
-            .attr("cx", function(d,i) {
-                return d[1] * 2.6938 + 465.4;
-            })
-            .attr("cy", function(d,i) {
-                return d[0] * -2.6938 + 227.066;
-            })
-            .transition()
-            .duration(300)
-            .attr('r', 8)
-            .each("end", function(){
-                d3.select(this)
-                    .transition()
-                    .duration(300)
-                    .attr('r',3);
-            });
-            
-        var subs = g.selectAll("circle.sub")
-            .data(msg.subs)
-            .enter()
-            .append("circle")
-            .attr('class','sub')
-            .attr('r', 2)
-            .attr("cx", function(d,i) {
-                return d[1] * 2.6938 + 465.4;
-            })
-            .attr("cy", function(d,i) {
-                return d[0] * -2.6938 + 227.066;
-            });
-        var lines = g.selectAll("line")
-            .data(msg.subs)
-            .enter()
-            .append("line")
-            .attr("stroke-width", "1px")
-            .attr("x1", msg.pub[1] * 2.6938 + 465.4)
-            .attr("y1", msg.pub[0] * -2.6938 + 227.066)
-            .attr("x2", msg.pub[1] * 2.6938 + 465.4)
-            .attr("y2", msg.pub[0] * -2.6938 + 227.066)
-            .style("opacity",0.5)
-            .transition()
-            .duration(300)
-            .attr("x2", function(d,i) {
-                return d[1] * 2.6938 + 465.4;
-            })
-            .attr("y2", function(d,i) {
-                return d[0] * -2.6938 + 227.066;
-            })
-            .transition()
-            .duration(1000)
-            .style("opacity",0);
-        g.transition()
-            .duration(1500)
-            .style("opacity",0)
-            .each("end", function(){
-                d3.select(this).remove();
-            });
-        
+            .attr( "r", 3 )
+            .style( "opacity", 0.1 )
+            .attr( "cx", function(d) { return d[1] *  2.6938 + 460 } )
+            .attr( "cy", function(d) { return d[0] * -2.6938 + 200 } )
+        );
     }
+
+    function random_color() {
+        return colors[Math.floor(Math.random()*colors.length)];
+    }
+
+    function animate_map_point(circle) {
+        circle.transition().duration(500)
+        .attr( "r", 20 )
+        .style( "opacity", 0.9 )
+
+        .transition().duration(300).delay(500)
+        .attr( "cx", function(d) { return d[1] *  2.6938 + 465.4   } )
+        .attr( "cy", function(d) { return d[0] * -2.6938 + 227.066 } )
+        .attr( "r", 10 )
+        .style( "opacity", 0.5 )
+
+        .transition().duration(200).delay(800)
+        .style( "opacity", 0.4 )
+        .attr( "r", 1 )
+
+        .transition().duration(100).delay(1000)
+        .style( "opacity", 0.9 )
+        .attr( "r", 6 )
+        .attr( "fill", "#f64000" )
+
+        .transition().duration(100).delay(1100)
+        .style( "opacity", 0.8 )
+        .attr( "r", 4 )
+
+        // Remove
+        .transition().duration(500).delay(20000)
+        .style( "opacity", 0.1 )
+        .attr( "r", 10 )
+        .transition().duration(100).delay(22000)
+        .remove()
+    }
+
+    PUBNUB.bind(
+        'mousedown,touchstart,touchmove,mousemove,scroll,click',
+        document,
+        function(){}
+    );
+
 }
-
-
 
 
 // ---------------------------------------------------------------------------
@@ -121,7 +122,6 @@ function run() {
 // --------------------------- LIBS BELOW HERE -------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
 
 
 // ---------------------------------------------------------------------------
