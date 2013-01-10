@@ -1,4 +1,7 @@
-# PubNub to MongoDB Pipe for Mobile iOS and Chrome with Real-time WebSockets
+# PubNub to MongoDB iOS iPhone Sync 
+## Pipe for Mobile iOS and Chrome with Real-time WebSockets
+
+(http://www.pubnub.com/)[PubNub]
 
 ## Install MongoDB
 
