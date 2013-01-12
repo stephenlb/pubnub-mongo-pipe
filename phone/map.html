@@ -75,10 +75,10 @@
     var svg    = d3.select("#map-container")
     ,   svgEl  = PUBNUB.$("map-container")
     ,   map    = svg.append("g").attr( "id", "map" )
-    ,   colors = ["#ff4646", "#0863bf", "#3d4c6b", "#ec9319",
-                  "#7d9906", "#dd641f", "#8dc050", "#f18822",
-                  "#8fb037", "#785A3A", "#E7A800", "#1A8FC9",
-                  "#681D2A", "#af4009", "#0f8c98", "#f18822",
+    ,   colors = ["#ff4646", "#0863bf", "#3d4c6b",
+                  "#7d9906", "#dd641f", "#8dc050",
+                  "#8fb037", "#E7A800", "#1A8FC9",
+                  "#681D2A", "#af4009", "#0f8c98",
                   "#005eac", "#785A3A", "#3b5998"];
 
     // -----------------------------------------------------------------------
@@ -108,8 +108,8 @@
     // Draw Points on the Map
     // -----------------------------------------------------------------------
     function draw_map_point(evt) {
-        var g      = svg.append("g").attr( "fill", random_color() )
-        ,   point  = evt.data.latlon;
+        var point = evt.data.latlon
+        ,   g     = svg.append("g").attr( "fill", hash(point[0]) );
 
         var circle = g.selectAll("circle")
         .data([point])
@@ -158,8 +158,9 @@
     // Utility Functions
     // -----------------------------------------------------------------------
     function r()            { return Math.random() }
-    function rnd()          { return r()-r() }
+    function rnd()          { return r() - r() }
     function random_color() { return colors[Math.floor(r()*colors.length)] }
+    function hash(c)        { return colors[c.toString().substr( 0, 1 )] }
 
 }
 
