@@ -1,7 +1,12 @@
 # PubNub to MongoDB iOS iPhone Sync 
-## Pipe for Mobile iOS and Chrome with Real-time WebSockets
+## Pipe for Mobile Phones with Real-time WebSockets
 
-(http://www.pubnub.com/)[PubNub]
+[http://www.pubnub.com/](PubNub)
+
+## Get your PubNub API Keys
+
+First you'll need to get your PubNub API keys by visiting
+[http://admin.pubnub.com/](PubNub Account Dashboard)
 
 ## Install MongoDB
 

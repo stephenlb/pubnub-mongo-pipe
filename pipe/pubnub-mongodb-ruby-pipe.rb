@@ -33,24 +33,45 @@ module MongoPubNubPipe
 
             if args[:puts_usage]
                 puts " "
-                puts " ----------------------------------------------"
+                puts " ------------------------------------------------------"
                 puts " Step 1:"
                 puts " -------"
                 puts " Open Your Browser to Show PubNub Pipe Console"
-                puts " ----------------------------------------------"
-                puts " http://www.pubnub.com/console?channel=#{@channel}"
+                puts " ------------------------------------------------------"
                 puts " "
-                puts " ----------------------------------------------"
+                puts " > open http://www.pubnub.com/console?channel=#{@channel}"
+                puts " "
+                puts " ------------------------------------------------------"
                 puts " Step 2:"
                 puts " -------"
+                puts " Open Demo Map on Your Phone"
+                puts " ------------------------------------------------------"
+                puts " "
+                puts " > open http://goo.gl/HAqAv##{@channel}"
+                puts " "
+                puts " ------------------------------------------------------"
+                puts " Step 3:"
+                puts " -------"
                 puts " Insert Test Data"
-                puts " ----------------------------------------------"
-                puts " ./mongo # open mongo console"
-                puts " use #{@database}"
-                puts " db.#{@collection}.insert({\"hello\":\"world\"})"
+                puts " ------------------------------------------------------"
+                puts " "
+                puts " > ./mongo"
+                puts " "
+                puts " > use #{@database}"
+                puts " > db.#{@collection}.insert({ latlon : [ 1.5, 2.0 ] })"
                 puts " "
             end
 
+            ## ---------------
+            ## Easter Egg
+            ## ---------------
+            '''
+            for (var i=0;i<10;i++) {
+                db.cap_collection.insert({
+                    latlon : [ Math.random()*40.0, Math.random()*-122.0 ]
+                })
+            }
+            '''
             self.connect()
         end
 
@@ -58,6 +79,11 @@ module MongoPubNubPipe
             @connection = Mongo::Connection.new( @server_ip, @server_port )
             @db         = @connection[@database]
             @table      = @db[@collection]
+            @cursor     = Mongo::Cursor.new(
+                @table,
+                :timeout  => false,
+                :tailable => true
+            )
 
             if not @db.collection_names.include?(@collection)
                 @db.create_collection( @collection, {
@@ -70,19 +96,20 @@ module MongoPubNubPipe
         end
 
         def pipe()
-            cursor = Mongo::Cursor.new(
-                @table,
-                :timeout  => false,
-                :tailable => true
-            )
-
-            doc = cursor.next
-            while doc do doc = cursor.next end
+            if not @started then
+                while doc = @cursor.next do end
+                @started = true
+            end
             while true do
-                doc = cursor.next
-
-                if cursor.closed?; self.connect(); next end
-                if doc == nil; sleep(1); next end
+                begin
+                    doc = @cursor.next
+                    if @cursor.closed?; self.connect(); next end
+                    if doc == nil; sleep(1); next end
+                rescue
+                    self.connect()
+                    self.pipe()
+                    return
+                end
 
                 @callback.call(doc)
                 @pubnub.publish(

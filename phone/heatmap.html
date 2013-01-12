@@ -50,14 +50,9 @@ function run() {
     // -----------------------------------------------------------------------
     // Setup Values
     // -----------------------------------------------------------------------
-    var svg    = d3.select("#map-container")
-    ,   svgEl  = PUBNUB.$("map-container")
-    ,   map    = svg.append("g").attr( "id", "map" )
-    ,   colors = ["#ff4646", "#0863bf", "#3d4c6b", "#ec9319",
-                  "#7d9906", "#dd641f", "#8dc050", "#f18822",
-                  "#8fb037", "#785A3A", "#E7A800", "#1A8FC9",
-                  "#681D2A", "#af4009", "#0f8c98", "#f18822",
-                  "#005eac", "#785A3A", "#3b5998"];
+    var svg   = d3.select("#map-container")
+    ,   svgEl = PUBNUB.$("map-container")
+    ,   map   = svg.append("g").attr( "id", "map" );
 
     // -----------------------------------------------------------------------
     // Draw World Map
@@ -73,7 +68,7 @@ function run() {
     })();
 
     // -----------------------------------------------------------------------
-    // Draw Points on the Map
+    // Wrapper Function for Drawing PubNub Streamed Coordinates
     // -----------------------------------------------------------------------
     function draw_map_points(msg) {
         draw_map_point(msg.data.pub);
@@ -84,71 +79,22 @@ function run() {
             );
         } );
     }
-    function draw_map_point(point) {
-        var g = svg.append("g").attr( "fill", "#f64000"/*random_color()*/ );
 
-        //.attr( "fill",  )
-        // Animation
-        //animate_map_point(
-            g.selectAll("circle")
-            .data([point])
-            .enter()
-            .append("circle")
-            //.attr( "r", 3 )
-            //.style( "opacity", 0.1 )
+    // -----------------------------------------------------------------------
+    // Draw Points on the Map
+    // -----------------------------------------------------------------------
+    function draw_map_point(point) {
+        var g = svg.append("g").attr( "fill", "#f64000" );
+
+        g.selectAll("circle")
+        .data([point])
+        .enter()
+        .append("circle")
         .style( "opacity", 0.05 )
         .attr( "r", Math.random() * 2 )
-            //.attr( "cx", function(d) { return d[1] *  2.6938 + 460 } )
-            //.attr( "cy", function(d) { return d[0] * -2.6938 + 200 } )
-            .attr( "cx", function(d) { return d[1] *  2.6938 + 465.4   + rnd() } )
-            .attr( "cy", function(d) { return d[0] * -2.6938 + 227.066 + rnd() } )
-        //);
+        .attr( "cx", function(d) { return d[1] *  2.6938 + 465.4   + rnd() } )
+        .attr( "cy", function(d) { return d[0] * -2.6938 + 227.066 + rnd() } )
     }
-
-    //function random_color() { return colors[Math.floor(rnd()*colors.length)] }
-
-    function animate_map_point(circle) {
-        circle.transition().duration(500)
-        r.attr( "r", 2 )
-        .style( "opacity", 0.2 )
-
-
-        .transition().duration(300).delay(500)
-        //.attr( "cx", function(d) { return d[1] *  2.6938 + 465.4   + rnd() } )
-        //.attr( "cy", function(d) { return d[0] * -2.6938 + 227.066 + rnd() } )
-        .attr( "r", 4 )
-        .style( "opacity", 0.2 )
-
-        .transition().duration(200).delay(800)
-        .style( "opacity", 0.2 )
-        .attr( "r", 2 )
-
-        .transition().duration(100).delay(1000)
-        .style( "opacity", 0.9 )
-        .attr( "r", Math.random() * 3 )
-        //.attr( "fill", "#f64000" )
-
-        .transition().duration(100).delay(1100)
-        .style( "opacity", 0.3 )
-        .attr( "r", Math.random() * 3 )
-
-        .transition().duration(500).delay(4000)
-        .style( "opacity", 0.05 )
-        .attr( "r", Math.random() * 8 )
-
-        // Remove
-        .transition().duration(100).delay(600000)
-        .remove()
-    }
-
-    0&& PUBNUB.history({
-        channel  : "real-time-stats-geostats",
-        callback : function(msgs) {
-            PUBNUB.each( msgs[0], function(msg) {
-                draw_map_points({data:msg});
-            } );
-        }
-    });
 
     get_all_history({
         wait     : 1000,
