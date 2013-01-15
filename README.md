@@ -1,6 +1,6 @@
 # MongoDB Stream Sync Pipe for iPhone with WebSockets
 
-![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo.png?raw=true)
+![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
 
 ## Get your PubNub API Keys
 

@@ -1,9 +1,9 @@
-# MongoDB Stream Sync Pipe for iPhone with WebSockets
+# MongoDB Stream Pipe for iPhone with WebSockets
 
 !!!!! IPHONE SCREENSHOT SHOW HORIZONGAL VIEW !!!!!
 
-We found a Gun.IO $1,025 commision listing which
-asked for **Real-time data stream of Geo Coordinates 
+We found a Gun.IO $1,025 commision listing which MapHub
+posted requesting **Real-time data stream of Geo Coordinates 
 directly from MongoDB to your iPhone
 with Node.JS Support**.
 Rather than taking the commision,
@@ -26,8 +26,8 @@ We simplimifed the process and built two modules,
 one in `ruby` and one in `node.js`.
 We'll walk through the methods for getting you started and
 how to hook up the stream to your iPhone app.
-
 You can fast-track the tutorial and go strait to the 
+GitHub Repository or install the pacakges for node or ruby.
 
 ## GitHub Repository
 
@@ -52,4 +52,34 @@ process runs on your MongoDB server to catch insert
 statemetns via tailable cursor.
 The data is streamed and brokered via PubNub directly to your
 iPhone App in real-time.
+
+## Getting Started Guide
+
+For those of you who need a quick full-guide to getting your mongoDB
+installed and running with data streaming to your mobile app, you 
+can follow this guide: 
+[MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/README.md).
+It will show you how to download/install MongoDB and the Pipe Process wether
+you are using Ruby or Node.JS on your server.
+
+
+
+
+
+
+
+
+
+
+
+
+![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
+
+
+
+
+
+
+
+
 
