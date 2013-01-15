@@ -1,9 +1,11 @@
-# PubNub to MongoDB iOS iPhone Sync 
-## Pipe for Mobile Phones with Real-time WebSockets
+# PubNub to MongoDB iOS iPhone Sync Pipe for Mobile Phones with Real-time WebSockets
 
-[http://www.pubnub.com/](PubNub)
+![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo.png?raw=true)
+
 
 ## Get your PubNub API Keys
+
+[http://www.pubnub.com/](PubNub)
 
 First you'll need to get your PubNub API keys by visiting
 [http://admin.pubnub.com/](PubNub Account Dashboard)
@@ -41,9 +43,9 @@ mongodb-osx-x86_64-2.2.2/bin/mongo
 
 ```
 gem update --system
-gem install mongo-pipe
 gem install pubnub
 gem install mongo
+gem install mongo-pipe ## MongoDB Pipe
 gem install bson_ext
 ```
 
@@ -84,8 +86,6 @@ ruby ./pubnub-mongodb-ruby-pipe.rb
 # TODO TODO TODO TODO TODO
 
  - TODO - rename pubnub-mongodb-ruby-pipe.rb to pubnub-mongodb-pipe.rb
- - TODO - logo brand pipe MongoDB <-> PubNub <-> iOS/Web/Etc.
- - TODO - move ruby module into separate file and make into a GEM
  - TODO - create node.js module.
  - TODO - 
  - TODO - 

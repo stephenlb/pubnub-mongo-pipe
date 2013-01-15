@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "mongo-pipe"
-  s.version = "1.1"
+  s.version = "1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["PubNub"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/stephenlb/pubnub-mongo-pipe"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.7.2"
+  s.rubygems_version = "1.9.3"
   s.summary = "Pipe MongoDB Data directly to your Mobile App."
 
   s.add_dependency "pubnub"
