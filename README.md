@@ -41,6 +41,7 @@ mongodb-osx-x86_64-2.2.2/bin/mongo
 
 ```
 gem update --system
+gem install mongo-pipe
 gem install pubnub
 gem install mongo
 gem install bson_ext
@@ -75,17 +76,6 @@ ruby ./pubnub-mongodb-ruby-pipe.rb
 
 # NOTES NOTES NOTES
 
-You should check this out.
-It's a new tool provided by PubNub that will pipe all inserts
-into your MongoDB Collections.
-This happens over a PubNub dispatch process via a Pipeline Communication
-You developers looking for a cool new tool
-
-
-
-
-
-
 
 
 
@@ -93,12 +83,10 @@ You developers looking for a cool new tool
 
 # TODO TODO TODO TODO TODO
 
- - TODO - change gun.io-blog name to pubnub-mongo-pipe
- - TODO - use PubNub websocket api
  - TODO - rename pubnub-mongodb-ruby-pipe.rb to pubnub-mongodb-pipe.rb
  - TODO - logo brand pipe MongoDB <-> PubNub <-> iOS/Web/Etc.
- - TODO - 
- - TODO - 
+ - TODO - move ruby module into separate file and make into a GEM
+ - TODO - create node.js module.
  - TODO - 
  - TODO - 
  - TODO - 
@@ -150,8 +138,8 @@ programming is easy when all you need to do is copy/paste together different cod
 
 https://github.com/doctrine/doctrine-mongodb-odm-tailable-cursor-bundle - !!!!!!!!
 
-
 ------------------------------------------------------------------------------
 Mobile App Consuming PubNub MongoDB Change Hooks
 ------------------------------------------------------------------------------
 You can use a Mobile Phone, Tablet or Web Browser.
+
