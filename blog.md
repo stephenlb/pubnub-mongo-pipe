@@ -1,6 +1,6 @@
-# Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
+# Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client
 
-!!!!! IPHONE SCREENSHOT SHOW HORIZONGAL VIEW !!!!!
+![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](https://raw.github.com/stephenlb/pubnub-mongo-pipe/master/media/mongo-pipe-iphone-700.png)
 
 We found a Gun.IO $1,025 commision listing which MapHub
 posted requesting **Real-time data stream of Geo Coordinates 
@@ -64,14 +64,6 @@ can follow this guide:
 It will show you how to download/install MongoDB and the Pipe Process wether
 you are using Ruby or Node.JS on your server.
 
-## MongoDB Tailable Cursors
-
-explain
-
-```
-partial example...
-```
-
 
 ## PubNub WebSocket Example
 
@@ -79,6 +71,15 @@ explain details frull RFC spec
 
 ```
 Full Example.
+```
+
+
+## MongoDB Tailable Cursors
+
+explain
+
+```
+partial example...
 ```
 
 
