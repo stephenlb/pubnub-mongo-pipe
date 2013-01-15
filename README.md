@@ -1,7 +1,6 @@
-# PubNub to MongoDB iOS iPhone Sync Pipe for Mobile Phones with Real-time WebSockets
+# MongoDB Stream Sync Pipe for iPhone with WebSockets
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo.png?raw=true)
-
 
 ## Get your PubNub API Keys
 
@@ -85,7 +84,6 @@ ruby ./pubnub-mongodb-ruby-pipe.rb
 
 # TODO TODO TODO TODO TODO
 
- - TODO - rename pubnub-mongodb-ruby-pipe.rb to pubnub-mongodb-pipe.rb
  - TODO - create node.js module.
  - TODO - 
  - TODO - 
