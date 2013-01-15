@@ -23,11 +23,12 @@
     // -----------------------------------------------------------------------
     // Open PubNub MonboDB Pipe
     // -----------------------------------------------------------------------
+    var channel              = location.href.split('#');
     var PUBNUB_SUBSCRIBE_KEY = 'demo';
     var socket               = new WebSocket(
         "ws://wsocket.pubnub.com/demo/"                +
-        PUBNUB_SUBSCRIBE_KEY                           +
-        "/" + (location.hash || "test.cap_collection")
+        PUBNUB_SUBSCRIBE_KEY + "/"                     +
+        (channel.length > 1 && channel[1] || "test.cap_collection")
     );
     socket.onmessage = draw_map_point;
 
