@@ -1,4 +1,4 @@
-# MongoDB Stream Pipe for iPhone with WebSockets
+# Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
 
 !!!!! IPHONE SCREENSHOT SHOW HORIZONGAL VIEW !!!!!
 
@@ -13,6 +13,8 @@ download and run for your live app.
 This way we were easily able to avoid the exchange
 with the posting owner, and just
 build an excellent open source solution for all.
+
+!!!!! VIMEO VIDEO LINK !!!!!
 
 The specs include several feature requests
 and here follows the listing requirements:
@@ -62,10 +64,22 @@ can follow this guide:
 It will show you how to download/install MongoDB and the Pipe Process wether
 you are using Ruby or Node.JS on your server.
 
+## MongoDB Tailable Cursors
+
+explain
+
+```
+partial example...
+```
 
 
+## PubNub WebSocket Example
 
+explain details frull RFC spec
 
+```
+Full Example.
+```
 
 
 

@@ -44,7 +44,7 @@ mongodb-osx-x86_64-2.2.2/bin/mongo
 gem update --system
 gem install pubnub
 gem install mongo
-gem install mongo-pipe ## MongoDB Pipe
+gem install mongopipe ## MongoDB Pipe
 gem install bson_ext
 ```
 
@@ -56,7 +56,7 @@ then follow the instructions that print out to test.
 #### Run Pipe via CURL
 
 ```
-ruby <(curl http://goo.gl/KZuaa)
+ruby <(curl http://goo.gl/bUlUh)
 ```
 
 You can also download the Pipe file first then run it locally.
@@ -65,12 +65,12 @@ local hard drive and you can execute it anytime you need to.
 
 ### Download First
 ```
-curl http://goo.gl/KZuaa > pubnub-mongodb-ruby-pipe.rb
+curl http://goo.gl/bUlUh > pubnub-mongodb-ruby-pipe.rb
 ```
 
 ### Then Run Locally
 ```
-ruby ./pubnub-mongodb-ruby-pipe.rb
+ruby ./pipe.rb
 ```
 
 
