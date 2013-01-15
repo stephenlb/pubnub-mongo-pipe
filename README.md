@@ -1,4 +1,4 @@
-# MongoDB Stream Sync Pipe for iPhone with WebSockets
+# Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
 
