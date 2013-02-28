@@ -1,20 +1,28 @@
 # Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client
 
-![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](https://raw.github.com/stephenlb/pubnub-mongo-pipe/master/media/mongo-pipe-iphone-700.png)
+![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](media/mongo-pipe-iphone-700.png)
 
-We found a Gun.IO $1,025 commision listing which MapHub
-posted requesting **Real-time data stream of Geo Coordinates 
+MapHub posted a request for 
+**Real-time data stream of Geo Coordinates 
 directly from MongoDB to your iPhone
 with Node.JS Support**.
+This request posted to Gun.IO  with a $1,025 commision listing.
 Rather than taking the commision,
-we reviewed the listed spces and developed an
+we reviewed the spces/requirements and developed an
 open source implementation that you can
 download and run for your live app.
+Also we've made a video that demonstraits the app and software
+connection between MongoDB and a mobile device;
+such as the iPhone.
 This way we were easily able to avoid the exchange
-with the posting owner, and just
+with the owner of the posting, and just
 build an excellent open source solution for all.
 
-!!!!! VIMEO VIDEO LINK !!!!!
+## Play Video - MongoDB Geo Coordinates
+
+[
+![Play Video - Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
+](https://vimeo.com/60716860)
 
 The specs include several feature requests
 and here follows the listing requirements:
