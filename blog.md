@@ -18,7 +18,7 @@ This way we were easily able to avoid the exchange
 with the owner of the posting, and just
 build an excellent open source solution for all.
 
-## Play Video - MongoDB Geo Coordinates
+### Play Video - MongoDB Geo Coordinates
 
 [
 ![Play Video - Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
