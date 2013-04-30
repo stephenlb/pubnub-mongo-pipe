@@ -1,28 +1,69 @@
-# Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client
+# Streamimg Geo Coordinates from MongoDB to your iPhone App with PubNub WebSocket SDK
 
 ![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](media/mongo-pipe-iphone-700.png)
 
-MapHub posted a request for 
+Not long ago PubNub partnered with a high standards online
+engineering broker firm (an online listing service
+where you can post engineering projects).
+The partnership involed joint PR and blogging, however it took a turn
+when a new opportunity/idea was presented.
+This particular idea stemmed from a commission listed on the broker's website
+for building an integrated Real-time Map Service:
 **Real-time data stream of Geo Coordinates 
-directly from MongoDB to your iPhone
-with Node.JS Support**.
-This request posted to Gun.IO  with a $1,025 commision listing.
-Rather than taking the commision,
+directly from MongoDB to your iPhone**.
+This request posted to the online workplace with a $3,025 commision listing.
+Rather than taking the commision for ourselves,
 we reviewed the spces/requirements and developed an
 open source implementation that you can
 download and run for your live app.
-Also we've made a video that demonstraits the app and software
-connection between MongoDB and a mobile device;
-such as the iPhone.
-This way we were easily able to avoid the exchange
-with the owner of the posting, and just
-build an excellent open source solution for all.
+MIT License, so you can use this however you desire.
+We even created a GEM for you!
+
+```
+gem install monogopipe
+```
+
+This is the first step and we'll walk you through more details.
+Now may be the time for you to watch the video, so feel free to jump into that
+now if you want a very, very brief demonstration/usage including
+installing the Ruby gem and executing the commands to setup
+MongoDB and then running the Pipe Daemon.
+
+>The video will show usage of the MongoPubNubPipe gem.
+
+```ruby
+MongoPubNubPipe::Connect.new(...)
+```
 
 ### Play Video - MongoDB Geo Coordinates
 
 [
 ![Play Video - Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
 ](https://vimeo.com/60716860)
+
+The video demonstraits an implementation
+connection between MongoDB and a mobile device; such as the iPhone.
+This application code and gem allows you to easily add a live
+always-on map which allows you to signal the device with a specific
+Lat/Long value triggering the device to draw an animated dot onto the
+screen in real-time.
+
+This way we were easily able to avoid the exchange
+with the owner of the posting, and just
+build an excellent open source solution for all.
+
+
+This is triggered by simply writting to the MongoDB directly.
+Once you've written a Lat/Long combo............................
+Once you've written a Lat/Long combo............................
+Once you've written a Lat/Long combo............................
+Once you've written a Lat/Long combo............................
+
+```ruby
+MongoPubNubPipe::Connect.new(...)
+```
+
+
 
 The specs include several feature requests
 and here follows the listing requirements:
@@ -43,13 +84,9 @@ GitHub Repository or install the pacakges for node or ruby.
 
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe)
 
-
 ```
- # Ruby
+ ## Ruby
 gem install monogopipe
-
- # Node.JS
-npm install monogopipe
 ```
 
 ## How it Works
@@ -72,35 +109,51 @@ can follow this guide:
 It will show you how to download/install MongoDB and the Pipe Process wether
 you are using Ruby or Node.JS on your server.
 
-
 ## PubNub WebSocket Example
 
+explain details frull RFC spec
+explain details frull RFC spec
+explain details frull RFC spec
+explain details frull RFC spec
+explain details frull RFC spec
+explain details frull RFC spec
 explain details frull RFC spec
 
 ```
 Full Example.
 ```
 
-
 ## MongoDB Tailable Cursors
 
 explain
+explain
+explain
+explain
 
 ```
-partial example...
+require 'rubygems'
+require 'mongopipe'
+
+ ## ------------------------------------------------------------------------
+ ## Pipe MongoDB for Inserts
+ ## ------------------------------------------------------------------------
+MongoPubNubPipe::Connect.new(
+    :puts_usage    => true,
+    :publish_key   => 'demo',
+    :subscribe_key => 'demo',
+    :db            => 'test',
+    :collection    => 'cap_collection',
+    :callback      => lambda{ |doc|
+        ## Optional Callback Called on Doc Insert
+        ## Remove :callback if you don't need it.
+        puts(doc)
+    }
+).pipe()
 ```
-
-
-
-
 
 
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
-
-
-
-
 
 
 

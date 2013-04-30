@@ -33,24 +33,6 @@
     socket.onmessage = draw_map_point;
 
     // -----------------------------------------------------------------------
-    // Open PubNub MonboDB Pipe
-    // -----------------------------------------------------------------------
-    /* DEBUG>>> REMOVE>>>REMOVE
-       DEBUG>>> REMOVE>>>REMOVE
-       DEBUG>>> REMOVE>>>REMOVE
-       DEBUG>>> REMOVE>>>REMOVE
-       DEBUG>>> REMOVE>>>REMOVE
-       DEBUG>>> REMOVE>>>REMOVE
-    var PUBNUB_SUBSCRIBE_KEY = 'e19f2bb0-623a-11df-98a1-fbd39d75aa3f';
-    var socket = new WebSocket(
-        "ws://wsocket.pubnub.com/demo/" +
-        PUBNUB_SUBSCRIBE_KEY            +
-        "/real-time-stats-geostats"
-    );
-    socket.onmessage = geo_points_stream_demo;
-    */
-
-    // -----------------------------------------------------------------------
     // DEMO MODE
     // -----------------------------------------------------------------------
     var point_queue = [];
@@ -556,5 +538,5 @@ run();
 
 </script>
 </body>
-<html>
+</html>
 
