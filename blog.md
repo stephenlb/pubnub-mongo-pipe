@@ -134,10 +134,17 @@ Full Example.
 
 ## MongoDB Tailable Cursors
 
-explain
-explain
-explain
-explain
+The ruby GEM `mongopipe` utilizes the tailable cursor interface provided
+by MongoDB then pipes the results directly through PubNub which creates
+a direct broadcast synchronization process with the mobile app.
+
+Make sure MongoDB is running.
+
+```
+mongod
+```
+
+Next open a text editor and copy/paste the following mongopipe example.
 
 ```ruby
 require 'rubygems'
@@ -160,6 +167,44 @@ MongoPubNubPipe::Connect.new(
 ).pipe()
 ```
 
+Save this to a file `pipe.rb` for example then execute it.
+
+```
+ruby pipe.rb
+```
+
+This will connect directly to MongoDB and print usage guide on next steps.
+The video covers only a demonstration of this process.
+Here is a sample output of what may be provided via the `puts(doc)` output:
+
+```
+ ------------------------------------------------------
+ Step 1:
+ -------
+ Open Your Browser to Show PubNub Pipe Console
+ ------------------------------------------------------
+ 
+ > open http://www.pubnub.com/console?channel=test.cap_collection
+ 
+ ------------------------------------------------------
+ Step 2:
+ -------
+ Open Demo Map on Your Phone
+ ------------------------------------------------------
+ 
+ > open http://goo.gl/HAqAv#test.cap_collection
+ 
+ ------------------------------------------------------
+ Step 3:
+ -------
+ Insert Test Data
+ ------------------------------------------------------
+ 
+ > ./mongo
+ 
+ > use test
+ > db.cap_collection.insert({ latlon : [ 1.5, 2.0 ] })
+```
 
 ## Conclusion/Wrappup
 
