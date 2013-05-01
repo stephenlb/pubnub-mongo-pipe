@@ -2,18 +2,19 @@
 
 ![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](media/mongo-pipe-iphone-700.png)
 
-Not long ago PubNub partnered with a high standards online
-engineering broker firm (an online listing service
+Not long ago we partnered with a high-standards online
+engineering broker (an online listing service
 where you can post engineering projects).
-The partnership involed joint PR and blogging, however it took a turn
-when a new opportunity/idea was presented.
+The partnership involed joint PR and blogging, however
+a new opportunity/idea was presented.
 This particular idea stemmed from a commission listed on the broker's website
-for building an integrated Real-time Map Service.
-We took the opportunity and built a **Ruby GEM** with a sprinkle of documentation.
+which listed requirements for building an integrated Real-time Map Service.
+We took the opportunity and built a **Ruby GEM** with a sprinkle
+of documentation and HTML5.
 
 ## Quick Start Guide
 
-For those of you who need a quick mini-guide to getting your MongoDB
+For those of you who need a **quick mini-guide** to getting your MongoDB
 installed and running with data sync streaming directly to your mobile app, you 
 can follow this guide: 
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe).
@@ -22,10 +23,10 @@ It will show you how to download/install MongoDB and the `MongoPipe` GEM.
 ### Real-time Data Stream of Geo Coordinates 
 Lat/Long from MongoDB replicated to your iPhone App
 
-The commision posting at the online workplace with a $3,025 bounty.
+The commision at the online workplace was posted as a $3,025 bounty.
 Rather than taking the commision for ourselves,
-which involves building and delivering the solution in a private exchange,
-we instead reviewed the spceifications and requirements then we developed an
+which involves building and delivering the solution in a *private exchange*,
+we instead reviewed the spceifications and requirements and we developed an
 open source implementation that you can
 download and run for your live app today!
 MIT License, so you can use this however you desire.
@@ -35,10 +36,11 @@ We even created a GEM for you and made it easy to get started:
 gem install monogopipe
 ```
 
-This is the first step in the process and next we'll walk you through more details.
-Actually now may be the time for you to watch the
-short video, so feel free to jump into that now 
-if you want a very, very brief demonstration/usage covering:
+Downloading the GEM is the first step in the process
+and next we'll walk you through more details.
+Actually now may be the time for you to **watch the short video**,
+so feel free to jump into that now 
+if you want a very brief demonstration and usage covering these points:
 
  1. Installing the Ruby gem and 
  2. Executing the commands to setup MongoDB and
