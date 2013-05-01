@@ -40,6 +40,8 @@ if you want a very, very brief demonstration/usage covering:
  6. Result is live-animated points on a map displayed on the iPhone.
 
 >The video will show usage of the MongoPubNubPipe gem.
+Source code is available via GitHub if you want to see everything - 
+[MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe)
 
 ```ruby
 MongoPubNubPipe::Connect.new(...)
@@ -60,36 +62,34 @@ Lat/Long db written into MongoDB.
 **This will cause the device to draw an animated dot onto the 
 screen of the device in real-time.**
 
+The dot animation is triggered by simply writting to your MongoDB directly.
+For example here is a MongoDB Command that will cause a write, which in turn
+triggers the sync with the consumer iPhone device that is rendering the map
+in real-time.
 
-
-This is triggered by simply writting to the MongoDB directly.
-Once you've written a Lat/Long combo............................
-Once you've written a Lat/Long combo............................
-Once you've written a Lat/Long combo............................
-Once you've written a Lat/Long combo............................
-
-```ruby
-MongoPubNubPipe::Connect.new(...)
+```javascript
+db.collection_name.insert({ latlon : [ 1.5, 2.0 ] })
 ```
 
-
-
-The specs include several feature requests
+Once you've written a Lat/Long coordinate into MongoDB colleciton,
+the process beggins instantly synchronizing with any connected iPhone.
+We where able to accomplish the and include several feature requests
 and here follows the listing requirements:
 
  - When a new Lat/Lon document is **inserted** into MongoDB,
    stream the Lat/Lon data to a mobile device is push data.
- - Use a Node.JS Service to stream the data out of MongoDB.
+ - Use a Ruby or Node.JS Service to stream the data out of MongoDB
+   as it is written in real-time.
 
-Simple requirement list, though it requires moving peices.
+Simple enough, yes, though it requires moving peices.
 We simplimifed the process and built two modules,
-one in `ruby` and one in `node.js`.
+one in `Ruby` and one in `HTML5`.
 We'll walk through the methods for getting you started and
 how to hook up the stream to your iPhone app.
 You can fast-track the tutorial and go strait to the 
 GitHub Repository or install the pacakges for node or ruby.
 
-## GitHub Repository
+### GitHub Repository
 
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe)
 
