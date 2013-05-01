@@ -194,14 +194,18 @@ Here is a sample output of what may be provided via the `puts(doc)` output:
  > db.cap_collection.insert({ latlon : [ 1.5, 2.0 ] })
 ```
 
-## Wrappup Details
+## Remaining Details
 
-..................
-..................
-..................
+This blog entry was intended to give you a quick skim over the details
+on how the `mongopipe` ruby gem works and what is invovled in coordinating
+the embeddable mobile HTML5 animated map.
 
-![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
+If you have any more questions please tweet [@PubNub](http://twitter.com/PubNub).
 
+You may be curious on the connectivity mechanism between your
+iPhone App and your MongoDB Sever.
+Checkout the **PubNub WebSocket Reference** below to see
+the transport mechanism.
 
 ## PubNub WebSocket Reference
 
@@ -226,4 +230,6 @@ function receiver(evt) {
 }
 ```
 
+
+![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
 
