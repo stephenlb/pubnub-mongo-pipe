@@ -43,9 +43,13 @@ if you want a very, very brief demonstration/usage covering:
 Source code is available via GitHub if you want to see everything - 
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe)
 
+This becomes the `new` interface that is available with `mongopipe` gem:
+
 ```ruby
 MongoPubNubPipe::Connect.new(...)
 ```
+
+Usage of `MongoPubNubPipe` is available lower in this document.
 
 ### Play Video - MongoDB Geo Coordinates
 
@@ -62,7 +66,7 @@ Lat/Long db written into MongoDB.
 **This will cause the device to draw an animated dot onto the 
 screen of the device in real-time.**
 
-The dot animation is triggered by simply writting to your MongoDB directly.
+The dot that animates is triggered by simply writting to your MongoDB directly.
 For example here is a MongoDB Command that will cause a write, which in turn
 triggers the sync with the consumer iPhone device that is rendering the map
 in real-time.
@@ -87,7 +91,7 @@ one in `Ruby` and one in `HTML5`.
 We'll walk through the methods for getting you started and
 how to hook up the stream to your iPhone app.
 You can fast-track the tutorial and go strait to the 
-GitHub Repository or install the pacakges for node or ruby.
+GitHub Repository or `gem install mongopipe` pacakge for ruby.
 
 ### GitHub Repository
 
@@ -103,9 +107,8 @@ gem install monogopipe
 MongoPipe is a new tool powered by [PubNub](http://www.pubnub.com) that
 **streams your MongoDB Documents** from your MongoDB Collection directly
 to your iPhone App in less than 0.25 seconds (real-time).
-Your iPhone app opens a TCP Socket Connection to PubNub while a dispatch
-process runs on your MongoDB server to catch insert
-statemetns via tailable cursor.
+Your iPhone app opens an always-on TCP Socket Connection to PubNub while a dispatch
+process runs on your MongoDB server via Tailable Cursors to catch inserted documents.
 The data is streamed and brokered via PubNub directly to your
 iPhone App in real-time.
 
@@ -115,8 +118,7 @@ For those of you who need a quick full-guide to getting your mongoDB
 installed and running with data streaming to your mobile app, you 
 can follow this guide: 
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/README.md).
-It will show you how to download/install MongoDB and the Pipe Process wether
-you are using Ruby or Node.JS on your server.
+It will show you how to download/install MongoDB and the Pipe Process.
 
 ## PubNub WebSocket Example
 
