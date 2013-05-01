@@ -89,7 +89,7 @@ Simple enough, yes, though it requires moving peices.
 We simplimifed the process and built two modules,
 one in `Ruby` and one in `HTML5`.
 We'll walk through the methods for getting you started and
-how to hook up the stream to your iPhone app.
+how to hook into the stream on your iPhone App.
 You can fast-track the tutorial and go strait to the 
 GitHub Repository or `gem install mongopipe` pacakge for ruby.
 
@@ -122,16 +122,21 @@ It will show you how to download/install MongoDB and the Pipe Process.
 
 ## PubNub WebSocket Example
 
-explain details frull RFC spec
-explain details frull RFC spec
-explain details frull RFC spec
-explain details frull RFC spec
-explain details frull RFC spec
-explain details frull RFC spec
-explain details frull RFC spec
+The MongoDB Pipe uses the PubNub WebSocket interface which provides an always-on
+synchronization direct to your iPhone app.
+The PubNub WebSocket acts as a broadcast receiver and syncs directly
+to your mobile device in real-time
+with your MongoDB server via MongoPipe.
 
-```
-Full Example.
+Following is an example of how the Map app implements the socket:
+
+```javascript
+var socket = new WebSocket('wss://pubsub.pubnub.com/PUB/SUB/CHANNEL');
+socket.onmessage = receiver;
+
+function receiver(evt) {
+    console.log(evt.data);
+}
 ```
 
 ## MongoDB Tailable Cursors
