@@ -1,4 +1,4 @@
-# Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
+# Streaming Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](/media/pubnub-mongo-pipe-logo-transparent.png)
 
@@ -87,71 +87,3 @@ Next go back to your mongodb console and type the following commands:
 use test
 db.cap_collection.insert({ latlon : [ 1.5, 2.0 ] })
 ```
-
-
-# NOTES NOTES NOTES
-
-
-
-
------------- notes ------------
-
-# TODO TODO TODO TODO TODO
-
- - TODO - create node.js module.
- - TODO - 
- - TODO - 
- - TODO - 
-
-
- - sections
-    - intro
-        - client display example <screenshot> LIVE MAP <screenshot>
-        - mention Gun.IO somewhere
-        - mention idea of taking a project on Gun.IO and doing it open source
-        - branded logo
-        - how it works lucid charts diagram
-            - Your Data Input -> MongoDB -> PubNub::MongoDB::Pipe -> iOS Phone or Chrome
-        - included S3/fastly Link
-
-        - talk about MapHub (section below)
-            - originally requested a node solution however this works on all platforms and streams data easily to both mobile and web devices.
-        - talk about tailable cursors in mongo and 
-        - multiple different PubNub Pipe Options including Ruby, Python and Node.JS
-
-    - setup
-    - code example
-    - dev console
-    - 
-
-
-MapHub Live Data (MongoDB)
-$1,025 estimate
-Description
-job for xer0x
-
-Requirements
-Develop a node solution to our existing platform. (data just needs to stream live data).
-
-
-JavaScript Ruby Python (app engine) PHP and REST.
-
-Mention Projects:
-http://gun.io/contracts/185/python-appengine-application - social network (app enigne)
-http://gun.io/contracts/175/live-data-mongodb - streaming live data from mongodb
-http://gun.io/contracts/20/app-for-multiple-platforms-infochimp-work - multi-platform (just a reference to discuss in the blog)
-http://gun.io/contracts/38/backend-web-development - simple web dev (use as reference in blog).
-
-
-http://gun.io/contracts/46/node-guru-needed-for-development-of-irc-and-web-m - good real-time reference.
-http://gun.io/contracts/171/htmlcssjs-freelancer - mobile reference     
-
-programming is easy when all you need to do is copy/paste together different code snipptes.
-
-https://github.com/doctrine/doctrine-mongodb-odm-tailable-cursor-bundle - !!!!!!!!
-
-------------------------------------------------------------------------------
-Mobile App Consuming PubNub MongoDB Change Hooks
-------------------------------------------------------------------------------
-You can use a Mobile Phone, Tablet or Web Browser.
-
