@@ -21,7 +21,7 @@ we instead reviewed the spceifications and requirements then we developed an
 open source implementation that you can
 download and run for your live app today!
 MIT License, so you can use this however you desire.
-We even created a GEM for you and made it easy:
+We even created a GEM for you and made it easy to get started:
 
 ```
 gem install monogopipe
@@ -37,6 +37,7 @@ if you want a very, very brief demonstration/usage covering:
  3. Running the Pipe Daemon.
  4. Launching the Map Viewer.
  5. Finally inserting lat/long coords into MongoDB.
+ 6. Result is live-animated points on a map displayed on the iPhone.
 
 >The video will show usage of the MongoPubNubPipe gem.
 
@@ -50,16 +51,15 @@ MongoPubNubPipe::Connect.new(...)
 ![Play Video - Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
 ](https://vimeo.com/60716860)
 
-The video demonstraits an implementation
-connection between MongoDB and a mobile device; such as the iPhone.
-This application code and gem allows you to easily add a live
-always-on map which allows you to signal the device with a specific
-Lat/Long value triggering the device to draw an animated dot onto the
-screen in real-time.
+The video demonstraits an implementation of the
+connection between MongoDB and a mobile device (an iPhone in this case).
+This application code and gem library will provide you a way to easily add a live
+always-on map connection which allows you to send lat/long signals
+directly to the device displaying the map with the specific
+Lat/Long db written into MongoDB.
+**This will cause the device to draw an animated dot onto the 
+screen of the device in real-time.**
 
-This way we were easily able to avoid the exchange
-with the owner of the posting, and just
-build an excellent open source solution for all.
 
 
 This is triggered by simply writting to the MongoDB directly.
@@ -159,6 +159,13 @@ MongoPubNubPipe::Connect.new(
     }
 ).pipe()
 ```
+
+
+## Conclusion/Wrappup
+
+This way we were easily able to avoid the exchange
+with the owner of the posting, and just
+build an excellent open source solution for all.
 
 
 
