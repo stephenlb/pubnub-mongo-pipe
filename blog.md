@@ -98,7 +98,7 @@ and here follows the requirements:
    as it is written in real-time.
 
 Simple enough, yes, though it requires moving pieces.
-We simplified the process and built two modules,
+We simplified the process and built two modules:
 one in `Ruby` and one in `HTML5`.
 We'll walk through the methods for getting you started and
 how to hook into the stream on your iPhone App.
@@ -118,19 +118,22 @@ gem install monogopipe
 
 MongoPipe is a new tool powered by [PubNub](http://www.pubnub.com) that
 **streams your MongoDB Documents** from your MongoDB Collection directly
-to your iPhone App in less than 0.25 seconds (real-time).
+to your iPhone App in less than 0.25 seconds (real-time)
+using the PubNub Real-time Network.
 Your iPhone app opens an always-on TCP Socket Connection to PubNub while a dispatch
 process runs on your MongoDB server via Tailable Cursors to catch inserted documents.
-The data is streamed and brokered via PubNub directly to your
+The data is streamed and brokered via PubNub Network directly to your
 iPhone App in real-time.
 
 ## MongoDB Tailable Cursors
 
-The ruby GEM `mongopipe` utilizes the tailable cursor interface provided
-by MongoDB then pipes the results directly through PubNub which creates
-a direct broadcast synchronization process with the mobile app.
+The ruby GEM `mongopipe` utilizes the tailable cursor interface provided by MongoDB Core.
+Document Data is then piped directly through the PubNub Network which uses
+a direct broadcast synchronization socket with the mobile app.
 
-Make sure MongoDB is running.
+Next we'll show you what the process is to get the `mongopipe` running on your Ruby Server.
+
+### Make sure MongoDB is running
 
 ```
 mongod
@@ -159,7 +162,7 @@ MongoPubNubPipe::Connect.new(
 ).pipe()
 ```
 
-Save this to a file `pipe.rb` for example then execute it.
+Save this to a file `pipe.rb` for example then **execute it**.
 
 ```
 ruby pipe.rb
@@ -204,20 +207,22 @@ This blog entry was intended to give you a quick skim over the details
 on how the `mongopipe` ruby gem works and what is involved in coordinating
 the embeddable mobile HTML5 animated map.
 
-If you have any more questions please tweet [@PubNub](http://twitter.com/PubNub).
+If you have any more questions please tweet [@PubNub](http://twitter.com/PubNub) directly.
 
-You may be curious on the connectivity mechanism between your
+You may be curious about the connectivity mechanism between your
 iPhone App and your MongoDB Sever.
 Checkout the **PubNub WebSocket Reference** below to see
-the transport mechanism.
+the transport mechanism utilized.
+
+Thank you for reading!
 
 ## PubNub WebSocket Reference
 
-The MongoDB Pipe uses the PubNub WebSocket interface which provides an always-on
-synchronization direct to your iPhone app.
-The PubNub WebSocket acts as a broadcast receiver and syncs directly
+The MongoDB Pipe uses the PubNub Network WebSocket interface which provides an always-on
+socket connection to your iPhone app.
+The PubNub Network WebSocket acts as a broadcast receiver and syncs directly
 to your mobile device in real-time
-with your MongoDB server via MongoPipe.
+from your MongoDB server via MongoPipe.
 
 Following is an example of how the Map app implements the socket:
 
