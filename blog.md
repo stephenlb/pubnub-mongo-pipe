@@ -8,26 +8,35 @@ where you can post engineering projects).
 The partnership involed joint PR and blogging, however it took a turn
 when a new opportunity/idea was presented.
 This particular idea stemmed from a commission listed on the broker's website
-for building an integrated Real-time Map Service:
-**Real-time data stream of Geo Coordinates 
-directly from MongoDB to your iPhone**.
-This request posted to the online workplace with a $3,025 commision listing.
+for building an integrated Real-time Map Service.
+We took the opportunity and built a **Ruby GEM** with a sprinkle of documentation.
+
+### Real-time Data Stream of Geo Coordinates 
+Lat/Long from MongoDB replicated to your iPhone App
+
+The commision posting at the online workplace with a $3,025 bounty.
 Rather than taking the commision for ourselves,
-we reviewed the spces/requirements and developed an
+which involves building and delivering the solution in a private exchange,
+we instead reviewed the spceifications and requirements then we developed an
 open source implementation that you can
-download and run for your live app.
+download and run for your live app today!
 MIT License, so you can use this however you desire.
-We even created a GEM for you!
+We even created a GEM for you and made it easy:
 
 ```
 gem install monogopipe
 ```
 
-This is the first step and we'll walk you through more details.
-Now may be the time for you to watch the video, so feel free to jump into that
-now if you want a very, very brief demonstration/usage including
-installing the Ruby gem and executing the commands to setup
-MongoDB and then running the Pipe Daemon.
+This is the first step in the process and next we'll walk you through more details.
+Actually now may be the time for you to watch the
+short video, so feel free to jump into that now 
+if you want a very, very brief demonstration/usage covering:
+
+ 1. Installing the Ruby gem and 
+ 2. Executing the commands to setup MongoDB and
+ 3. Running the Pipe Daemon.
+ 4. Launching the Map Viewer.
+ 5. Finally inserting lat/long coords into MongoDB.
 
 >The video will show usage of the MongoPubNubPipe gem.
 
@@ -130,7 +139,7 @@ explain
 explain
 explain
 
-```
+```ruby
 require 'rubygems'
 require 'mongopipe'
 
