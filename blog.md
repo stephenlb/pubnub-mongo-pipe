@@ -120,25 +120,6 @@ can follow this guide:
 [MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/README.md).
 It will show you how to download/install MongoDB and the Pipe Process.
 
-## PubNub WebSocket Example
-
-The MongoDB Pipe uses the PubNub WebSocket interface which provides an always-on
-synchronization direct to your iPhone app.
-The PubNub WebSocket acts as a broadcast receiver and syncs directly
-to your mobile device in real-time
-with your MongoDB server via MongoPipe.
-
-Following is an example of how the Map app implements the socket:
-
-```javascript
-var socket = new WebSocket('wss://pubsub.pubnub.com/PUB/SUB/CHANNEL');
-socket.onmessage = receiver;
-
-function receiver(evt) {
-    console.log(evt.data);
-}
-```
-
 ## MongoDB Tailable Cursors
 
 The ruby GEM `mongopipe` utilizes the tailable cursor interface provided
@@ -213,17 +194,36 @@ Here is a sample output of what may be provided via the `puts(doc)` output:
  > db.cap_collection.insert({ latlon : [ 1.5, 2.0 ] })
 ```
 
-## Conclusion/Wrappup
+## Wrappup Details
 
-This way we were easily able to avoid the exchange
-with the owner of the posting, and just
-build an excellent open source solution for all.
-
-
+..................
+..................
+..................
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
 
 
+## PubNub WebSocket Reference
 
+The MongoDB Pipe uses the PubNub WebSocket interface which provides an always-on
+synchronization direct to your iPhone app.
+The PubNub WebSocket acts as a broadcast receiver and syncs directly
+to your mobile device in real-time
+with your MongoDB server via MongoPipe.
+
+Following is an example of how the Map app implements the socket:
+
+```javascript
+// Create Socket Connection
+var socket = new WebSocket('wss://pubsub.pubnub.com/PUBLISH_KEY/SUBSCRIBE_KEY/CHANNEL');
+
+// Set Message Receiver Function
+socket.onmessage = receiver;
+
+// Receiver Function Prints Data Result
+function receiver(evt) {
+    console.log(evt.data);
+}
+```
 
 
