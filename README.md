@@ -1,6 +1,6 @@
 # Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub
 
-![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
+![PubNub MongoDB Pipe to iOS iPhone via WebSocket](/media/pubnub-mongo-pipe-logo-transparent.png)
 
 ## Get your PubNub API Keys
 
@@ -65,7 +65,7 @@ local hard drive and you can execute it anytime you need to.
 
 ### Download First
 ```
-curl http://goo.gl/bUlUh > pubnub-mongodb-ruby-pipe.rb
+curl http://goo.gl/bUlUh > pipe.rb
 ```
 
 ### Then Run Locally
@@ -73,6 +73,20 @@ curl http://goo.gl/bUlUh > pubnub-mongodb-ruby-pipe.rb
 ruby ./pipe.rb
 ```
 
+Follow the Output Instructions.
+That's it!
+
+The following section only shows a sample insertable document that
+triggers replication broadcast to the map.
+
+### Mongo Console
+
+Next go back to your mongodb console and type the following commands:
+
+```javascript
+use test
+db.cap_collection.insert({ latlon : [ 1.5, 2.0 ] })
+```
 
 
 # NOTES NOTES NOTES
