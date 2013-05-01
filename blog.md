@@ -1,11 +1,11 @@
-# Streamimg Geo Coordinates from MongoDB to your iPhone App with PubNub WebSocket SDK
+# Streaming Geo Coordinates from MongoDB to your iPhone App with PubNub WebSocket SDK
 
-![Streamimg Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](media/mongo-pipe-iphone-700.png)
+![Streaming Geo Coordinates from MongoDB to iPhone with WebSockets and PubNub](media/mongo-pipe-iphone-700.png)
 
 Not long ago we partnered with a high-standards online
 engineering broker (an online listing service
 where you can post engineering projects).
-The partnership involed joint PR and blogging, however
+The partnership involved joint PR and blogging, however
 a new opportunity/idea was presented.
 This particular idea stemmed from a commission listed on the broker's website
 which listed requirements for building an integrated Real-time Map Service.
@@ -23,10 +23,10 @@ It will show you how to download/install MongoDB and the `MongoPipe` GEM.
 ### Real-time Data Stream of Geo Coordinates 
 Lat/Long from MongoDB replicated to your iPhone App
 
-The commision at the online workplace was posted as a $3,025 bounty.
-Rather than taking the commision for ourselves,
+The commission at the online workplace was posted as a $3,025 bounty.
+Rather than taking the commission for ourselves,
 which involves building and delivering the solution in a *private exchange*,
-we instead reviewed the spceifications and requirements and we developed an
+we instead reviewed the specifications and requirements and we developed an
 open source implementation that you can
 download and run for your live app today!
 MIT License, so you can use this however you desire.
@@ -64,10 +64,10 @@ Usage of `MongoPubNubPipe` is available lower in this document.
 ### Play Video - MongoDB Geo Coordinates
 
 [
-![Play Video - Streamimg Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
+![Play Video - Streaming Geo Coordinates from MongoDB to iPhone with PubNub WebSocket Client](media/pubnub-mongo-pipe-video.jpg)
 ](https://vimeo.com/60716860)
 
-The video demonstraits an implementation of the
+The video demonstrates an implementation of the
 connection between MongoDB and a mobile device (an iPhone in this case).
 This application code and gem library will provide you a way to easily add a live
 always-on map connection which allows you to send lat/long signals
@@ -76,7 +76,7 @@ Lat/Long db written into MongoDB.
 **This will cause the device to draw an animated dot onto the 
 screen of the device in real-time.**
 
-The dot that animates is triggered by simply writting to your MongoDB directly.
+The dot that animates is triggered by simply writing to your MongoDB directly.
 For example here is a MongoDB Command that will cause a write, which in turn
 triggers the sync with the consumer iPhone device that is rendering the map
 in real-time.
@@ -85,8 +85,8 @@ in real-time.
 db.collection_name.insert({ latlon : [ 1.5, 2.0 ] })
 ```
 
-Once you've written a Lat/Long coordinate into MongoDB colleciton,
-the process beggins instantly synchronizing with any connected iPhone.
+Once you've written a Lat/Long coordinate into MongoDB collection,
+the process begins instantly synchronizing with any connected iPhone.
 We where able to accomplish the and include several feature requests
 and here follows the listing requirements:
 
@@ -95,13 +95,13 @@ and here follows the listing requirements:
  - Use a Ruby or Node.JS Service to stream the data out of MongoDB
    as it is written in real-time.
 
-Simple enough, yes, though it requires moving peices.
-We simplimifed the process and built two modules,
+Simple enough, yes, though it requires moving pieces.
+We simplified the process and built two modules,
 one in `Ruby` and one in `HTML5`.
 We'll walk through the methods for getting you started and
 how to hook into the stream on your iPhone App.
 You can fast-track the tutorial and go strait to the 
-GitHub Repository or `gem install mongopipe` pacakge for ruby.
+GitHub Repository or `gem install mongopipe` package for ruby.
 
 ### GitHub Repository
 
@@ -199,7 +199,7 @@ Here is a sample output of what may be provided via the `puts(doc)` output:
 ## Remaining Details
 
 This blog entry was intended to give you a quick skim over the details
-on how the `mongopipe` ruby gem works and what is invovled in coordinating
+on how the `mongopipe` ruby gem works and what is involved in coordinating
 the embeddable mobile HTML5 animated map.
 
 If you have any more questions please tweet [@PubNub](http://twitter.com/PubNub).
