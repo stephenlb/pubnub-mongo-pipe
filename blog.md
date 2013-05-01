@@ -68,16 +68,18 @@ Usage of `MongoPubNubPipe` is available lower in this document.
 ](https://vimeo.com/60716860)
 
 The video demonstrates an implementation of the
-connection between MongoDB and a mobile device (an iPhone in this case).
+connection between **MongoDB** and a **mobile device** (an iPhone in this case).
 This application code and gem library will provide you a way to easily add a live
 always-on map connection which allows you to send lat/long signals
 directly to the device displaying the map with the specific
-Lat/Long db written into MongoDB.
+Lat/Long DB written into MongoDB.
 **This will cause the device to draw an animated dot onto the 
 screen of the device in real-time.**
 
-The dot that animates is triggered by simply writing to your MongoDB directly.
-For example here is a MongoDB Command that will cause a write, which in turn
+The dot that animates is triggered by simply writing to your MongoDB collection directly
+either through the mongo console or through your RoR/Ruby Server Code.
+For example here is a MongoDB Console Command that will cause a DB write,
+creating a Document, which then
 triggers the sync with the consumer iPhone device that is rendering the map
 in real-time.
 
@@ -87,12 +89,12 @@ db.collection_name.insert({ latlon : [ 1.5, 2.0 ] })
 
 Once you've written a Lat/Long coordinate into MongoDB collection,
 the process begins instantly synchronizing with any connected iPhone.
-We where able to accomplish the and include several feature requests
-and here follows the listing requirements:
+We where able to include several feature requests
+and here follows the requirements:
 
  - When a new Lat/Lon document is **inserted** into MongoDB,
    stream the Lat/Lon data to a mobile device is push data.
- - Use a Ruby or Node.JS Service to stream the data out of MongoDB
+ - Use a **Ruby** or Node.JS Service to stream the data out of MongoDB
    as it is written in real-time.
 
 Simple enough, yes, though it requires moving pieces.
