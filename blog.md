@@ -11,6 +11,14 @@ This particular idea stemmed from a commission listed on the broker's website
 for building an integrated Real-time Map Service.
 We took the opportunity and built a **Ruby GEM** with a sprinkle of documentation.
 
+## Quick Start Guide
+
+For those of you who need a quick mini-guide to getting your MongoDB
+installed and running with data sync streaming directly to your mobile app, you 
+can follow this guide: 
+[MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe).
+It will show you how to download/install MongoDB and the `MongoPipe` GEM.
+
 ### Real-time Data Stream of Geo Coordinates 
 Lat/Long from MongoDB replicated to your iPhone App
 
@@ -111,14 +119,6 @@ Your iPhone app opens an always-on TCP Socket Connection to PubNub while a dispa
 process runs on your MongoDB server via Tailable Cursors to catch inserted documents.
 The data is streamed and brokered via PubNub directly to your
 iPhone App in real-time.
-
-## Getting Started Guide
-
-For those of you who need a quick full-guide to getting your mongoDB
-installed and running with data streaming to your mobile app, you 
-can follow this guide: 
-[MongoDB Pipe GitHub Repository](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/README.md).
-It will show you how to download/install MongoDB and the Pipe Process.
 
 ## MongoDB Tailable Cursors
 
@@ -229,7 +229,6 @@ function receiver(evt) {
     console.log(evt.data);
 }
 ```
-
 
 ![PubNub MongoDB Pipe to iOS iPhone via WebSocket](https://github.com/stephenlb/pubnub-mongo-pipe/blob/master/media/pubnub-mongo-pipe-logo-transparent.png?raw=true)
 
